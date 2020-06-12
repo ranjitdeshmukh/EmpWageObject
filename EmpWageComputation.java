@@ -1,5 +1,5 @@
 import java.util.Random;
-public class EmpWageComputation{
+public class EmpWageCalculation{
 
    public static final int IS_EMP_FULL_TIME = 1;
    public static final int IS_EMP_PART_TIME = 2;
