@@ -1,10 +1,12 @@
 import java.util.Random;
 
-
+public interface IComputeEmpwage{
+  public void addCompanyEmpWage(String company,int empRatePerHour,
+    int numOfWorkingDays,int maxHoursPerMonth)
+}
 public class EmpWageComputation{
 
- public static final int IS_EMP_FULL_TIME = 1;
- public static final int IS_EMP_PART_TIME = 2;
+ 
  private final String company ;
  private final int empRatePerHour;
  private final int numOfWorkingDays; 
@@ -19,6 +21,41 @@ public class EmpWageComputation{
 
 }
 
+  public void setTotalEmpWage(int totalEmpWage){
+
+    this.totalEmpWage=totalEmpWage;
+
+  }
+
+  @Override
+  public String toString(){
+
+    return "Total Emp wage for company" +company+ "Is" +totalEmpWage;
+  }
+
+}
+
+public class EmpwageBuilder implements IComputeEmpwage{
+
+  public static final int IS_EMP_FULL_TIME = 1;
+ public static final int IS_EMP_PART_TIME = 2;
+
+ private int numOfCompany=0;
+
+ private LInkedList<CompanyEmpWage> = CompanyEmpWageList;
+ private Map<String,CompanyEmpWage> = companyToEmpWageMap;
+
+
+ public EmpwageBuilder(){
+
+  CompanyEmpWageList = new LInkedList<>();
+  companyToEmpWageMap = new HashMap<>();
+ }
+
+
+}
+
+  
 public void EmpWage(){
 
   int empHrs = 0 , totalEmpHrs = 0 , totalWorkingDays = 0 ;
@@ -58,7 +95,9 @@ public static void main(String args[]){
   System.out.println("Welcome to Employee Wage Problem");
       // EmpWageComputation employee = new EmpWageComputation();
   EmpWageComputation employee =   new EmpWageComputation("Dmart" ,20,2,20);
+  EmpWageComputation employee_new =   new EmpWageComputation("WalMart" ,20,2,20);
   employee.EmpWage();
+  employee_new.EmpWage();
 }
 
 }
