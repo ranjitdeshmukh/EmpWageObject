@@ -53,6 +53,13 @@ public class EmpwageBuilder implements IComputeEmpwage{
  }
 
 
+public void addCompanyEmpWage(String company,int empRatePerHour ,int numOfWorkingDays, int maxHoursPerMonth){
+  
+  EmpWageComputation empWageComputation = new EmpWageComputation(company,empRatePerHour,
+                                                                  numOfWorkingDays,maxHoursPerMonth);  
+
+    CompanyEmpWageList.add(EmpWageComputation);
+    companyToEmpWageMap.put(company,EmpWageComputation);
 }
 
   
