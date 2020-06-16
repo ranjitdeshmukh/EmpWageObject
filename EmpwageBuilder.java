@@ -23,10 +23,12 @@ public class EmpWageCompute implements EmpWageICompute
    {
       switch (empCheck)
       {
-         case IS_EMP_FULL_TIME:  empHours = 8 ;
-                                 break ;
-         case IS_EMP_PART_TIME:  empHours = 4 ;
-                                 break ;
+         case IS_EMP_FULL_TIME:  
+	 empHours = 8 ;
+          break ;
+         case IS_EMP_PART_TIME:  
+	 empHours = 4 ;
+          break ;
          default: empHours=0  ;
       }
       return empHours;
