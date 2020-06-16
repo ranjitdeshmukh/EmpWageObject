@@ -1,31 +1,41 @@
-public interface ICompanyEmpWage{
-    
-    public void addCompanyEmpWage( String company, int empRatePerHour, 
-     int workingDaysInMonth, int maximunWorkHours );
+import java.util.ArrayList;
+
+ 
+public interface EmpWageICompute
+{
+    public static final int IS_EMP_FULL_TIME = 1;
+    public static final int IS_EMP_PART_TIME = 2;
+    public void addCompanyEmployee(String company, int empRatePerHour, int workingDaysInMonth, int maximunWorkHours);
+    public void getDailyWage();
+    public int getMonthlyWage(CompanyEmpWage company );
 }
 
+class CompanyEmpWage
+{
+        public final String company;
+        public final int empRatePerHour;
+        public final int workingDaysInMonth;
+        public final int maximunWorkHours;
+        public int totalEmpWage;
+        int totalSalary;
+        public ArrayList<Integer> dailyWage = new ArrayList<>();
+        public CompanyEmpWage( String company, int empRatePerHour, int workingDaysInMonth, int maximunWorkHours )
+        {
+            this.company = company;
+            this.empRatePerHour = empRatePerHour;
+            this.workingDaysInMonth = workingDaysInMonth;
+            this.maximunWorkHours = maximunWorkHours;
+        }
 
-class CompanyEmpWage{
-    public final String company;
-    public final int empRatePerHour;
-    final int workingDaysInMonth;
-    final int maximunWorkHours;
-    public int totalEmpWage;
-    public CompanyEmpWage( String company, int empRatePerHour, int workingDaysInMonth, int maximunWorkHours )
+    public void getTotalWage(int totalSalary )
     {
-        this.company = company;
-        this.empRatePerHour = empRatePerHour;
-        this.workingDaysInMonth = workingDaysInMonth;
-        this.maximunWorkHours = maximunWorkHours;
+        this.totalSalary = totalSalary;
     }
-
-    public void setTotalEmpWage(int totalEmpWage) 
+    public void storeDailyWage(ArrayList<Integer> dailyWage )
     {
-        this.totalEmpWage = totalEmpWage;
-    }
-    @Override
-    public String toString() 
-    {
+        this.dailyWage = dailyWage;
+    }   
+}
         return ("Total Emp Wage for Company: " +company+ " is: " + totalEmpWage);
     }
 }
